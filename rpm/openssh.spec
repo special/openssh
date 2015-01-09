@@ -160,6 +160,8 @@ BuildRequires: libedit-devel ncurses-devel
 BuildRequires: nss-devel
 %endif
 
+BuildRequires: pkgconfig(libselinux)
+
 
 %package clients
 Summary: The OpenSSH client applications
@@ -281,6 +283,7 @@ fi
 	--enable-vendor-patchlevel="FC-%{version}-%{release}" \
 	--disable-strip \
 	--without-zlib-version-check \
+	--with-selinux \
 %if %{nss}
 	--with-nss \
 %endif
